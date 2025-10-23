@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projetos - João Pedro Figueiredo</title>
+  <link rel="stylesheet" href="styles.css">
+    <style>
+    .project-card.improved {
+      flex-direction: column;
+      background-color: var(--dark-gray);
+      padding: 2rem;
+      border-radius: 1rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    }
+
+    .project-card.improved img.project-image {
+      width: 100%;
+      height: auto;
+      border-radius: 1rem;
+      margin-bottom: 1.5rem;
+      object-fit: cover;
+    }
+
+    .project-card.improved .project-summary {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .project-card.improved .project-details {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+    }
+
+    .project-card.improved .project-details li {
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .project-card.improved .project-details a {
+      color: var(--highlight-color);
+      text-decoration: underline;
+    }
+
+    .project-card.improved .project-title {
+      font-size: 1.6rem;
+      color: var(--highlight-color);
+      margin-bottom: 1rem;
+    }
+    .btn-expand {
+      background-color: var(--highlight-color);
+      color: #fff;
+      font-weight: bold;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      margin-top: 1.2rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-expand:hover {
+      background-color: #3f4cb0;
+    }
+
+    .details-hidden {
+      display: none;
+      background-color: #fff;
+      color: #111;
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin-top: 1.5rem;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+
+    .details-hidden ul {
+      margin-left: 1.5rem;
+      list-style-type: disc;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projetos.html" class="active">Projetos</a></li>
+        <li><a href="sobre.html">Sobre mim</a></li>
+        <li><a href="servicos.html">Serviços Contratáveis</a></li>
+        <li><a href="softskills.html">Soft skills</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="section projects-full">
+      <h1>Meus Projetos</h1>
+      <div class="project-cards">
+        <div class="project-card improved" id="journey">
+          <img src="imagens/imagem-menu-journey.png" alt="Projeto Journey" class="project-image">
+          <div class="project-content">
+            <h3 class="project-title">Journey – Organização de Viagens em Grupo</h3>
+            <p class="project-summary">
+              Uma aplicação web completa e colaborativa que permite planejar e organizar viagens em grupo com múltiplas funcionalidades integradas.
+            </p>
+            <ul class="project-details">
+              <li><strong>Frontend:</strong> <a href="https://github.com/joaopfigo/Journey_front" target="_blank">GitHub</a></li>
+              <li><strong>Backend:</strong> <a href="https://github.com/joaopfigo/Journey_back" target="_blank">GitHub</a></li>
+              <li><strong>Demo online:</strong> <a href="https://journey-front-alpha.vercel.app/" target="_blank">journey-front-alpha.vercel.app</a></li>
+            </ul>
+            <div class="project-tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">Render</span>
+              <span class="tag">API</span>
+            </div>
+              <button onclick="toggleDetails()" class="btn-expand">🔍 Ver detalhes completos</button>
+              <div id="journeyDetails" class="details-hidden">
+              <p><strong>Journey – Uma Plataforma Colaborativa de Viagens</strong></p>
+              <p>O <em>Journey</em> é um sistema web desenvolvido para facilitar o planejamento, acompanhamento e registro de viagens, tanto individuais quanto em grupo. Seu diferencial está na abordagem colaborativa: os usuários não apenas planejam suas próprias jornadas, mas fazem isso em conjunto com outras pessoas, compartilhando roteiros, finanças, mídias e decisões.</p>
+              <p><strong>Experiência do Usuário e Fluxo de Uso</strong></p>
+              <p>Tudo começa com o login ou cadastro do usuário, que pode acessar o sistema via formulário tradicional ou autenticação do Google. Uma vez logado, o usuário pode criar grupos de viagem ou ser convidado para grupos existentes. Cada grupo tem seu próprio ecossistema de dados isolado — roteiros, carteiras, colaboradores e mídias são todos armazenados de forma segregada por grupo.</p>
+              <p><strong>Colaboração com Permissões e Restrições</strong></p>
+              <p>Cada ação dentro do sistema está vinculada ao email do usuário logado. Isso garante que apenas o autor de uma tarefa, mídia ou lançamento financeiro possa excluí-la. Por exemplo:</p>
+              <ul>
+                <li>Fotos e vídeos: só podem ser excluídos por quem os enviou.</li>
+                <li>Itens do roteiro: cada tarefa adicionada tem seu autor registrado; somente ele pode removê-la ou editá-la.</li>
+              </ul>
+              <p><strong>Notificações Inteligentes</strong></p>
+              <p>O sistema implementa um sistema de notificações que mantém todos os participantes informados. Estas são criadas automaticamente em eventos-chave:</p>
+              <ul>
+                <li>Ao adicionar um colaborador a um grupo: o convidado recebe uma notificação com convite.</li>
+                <li>Quando um convite é aceito: os demais membros são notificados sobre o novo participante.</li>
+                <li>Envio de mídia: todos os colaboradores (exceto o autor) recebem alerta de que uma nova foto ou vídeo foi adicionada.</li>
+                <li>Nova dívida registrada: o responsável por pagar é notificado, com valor e descrição incluídos.</li>
+              </ul>
+              <p><strong>Roteiros Personalizados</strong></p>
+              <p>O módulo de roteiros de viagem permite que os usuários criem atividades organizadas por dia. Cada atividade é atribuída a quem a criou. O sistema impede alterações ou exclusões por outros membros — um mecanismo que protege a autoria e evita conflitos entre colaboradores.</p>
+              <p><strong>Gestão Financeira Colaborativa</strong></p>
+              <p>Na seção da carteira, usuários podem adicionar ou visualizar entradas/saídas de dinheiro, criar dívidas ou cobranças entre membros do grupo e ver relatórios consolidados do saldo individual e coletivo. As ações de registrar dívida ou valor a receber também geram notificações personalizadas.</p>
+              <p><strong>Galeria de Mídias</strong></p>
+              <p>Cada grupo tem uma galeria exclusiva para upload de imagens e vídeos, com opção de seleção múltipla, exclusão e download. Apenas o autor pode apagar os arquivos que enviou. Um modal moderno exibe detalhes da mídia, incluindo o nome de quem publicou.</p>
+              <p><strong>Funcionalidade GPS</strong></p>
+              <p>O módulo de GPS, utilizando a biblioteca Leaflet.js, permite que os usuários visualizem mapas interativos com marcadores de locais. Isso é útil para registrar os destinos visitados e visualizar o trajeto.</p>
+              <p><strong>Conclusão</strong></p>
+              <p>O <em>Journey</em> é uma aplicação rica em funcionalidades, cuidadosamente estruturada para promover colaboração com controle, segurança de dados, e uma experiência fluida e intuitiva. Com seu backend leve baseado em JSON, é ideal para ambientes educacionais ou MVPs funcionais. Sua arquitetura promove aprendizado prático de temas como autenticação, armazenamento local, integração REST, UI responsiva e controle de permissões.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card improved" id="bingo">
+          <img src="imagens/imagem-site-bingo.png" alt="Projeto Jogo de Bingo" class="project-image">
+          <div class="project-content">
+            <h3 class="project-title">Jogo de Bingo – Versões Web e Console</h3>
+            <p class="project-summary">
+              Um jogo de Bingo desenvolvido em duas versões distintas: uma visual e interativa no navegador, e outra em C# para terminal, ambas com regras completas e controle por jogador.
+            </p>
+            <ul class="project-details">
+              <li><strong>Versão web:</strong> <a href="https://jogo-bingo.vercel.app/" target="_blank">jogo-bingo.vercel.app</a></li>
+              <li><strong>GitHub (HTML):</strong> <a href="https://github.com/joaopfigo/Jogo_Bingo_HTML" target="_blank">Jogo_Bingo_HTML</a></li>
+              <li><strong>GitHub (C#):</strong> <a href="https://github.com/joaopfigo/Jogo_Bingo_Csharp" target="_blank">Jogo_Bingo_Csharp</a></li>
+              <li><strong>Download (EXE):</strong> <a href="arquivos/Bingo.exe" download>Bingo.exe</a></li>
+            </ul>
+            <div class="project-tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">C#</span>
+              <span class="tag">Console App</span>
+            </div>
+            <button onclick="toggleDetailsBingo()" class="btn-expand">🔍 Ver detalhes completos</button>
+            <div id="bingoDetails" class="details-hidden">
+              <p><strong>Introdução</strong></p>
+              <p>O Jogo de Bingo desenvolvido por João Pedro está disponível em duas versões: uma versão interativa e visual para navegador, construída com HTML, CSS e JavaScript; e uma versão robusta em C#, executada via terminal, com foco em lógica e persistência em arquivos.</p>
+
+              <p><strong>Versão Web (HTML, CSS e JavaScript)</strong></p>
+              <p>Na versão web, a experiência começa com a configuração dos jogadores: de 2 a 5 participantes, cada um podendo escolher de 1 a 4 cartelas. As cartelas são geradas dinamicamente, com números únicos e respeitando as faixas do Bingo tradicional (colunas B, I, N, G, O com faixas específicas).</p>
+              <p>O sistema sorteia números de 1 a 75 e marca automaticamente nas cartelas dos jogadores. Após a quarta rodada, é possível tentar um bingo — válido se preencher uma linha, coluna ou diagonal. Caso o jogador erre, ele perde a cartela usada. Se perder todas, é eliminado. Ao final do jogo, um ranking é exibido com a classificação por ordem de vitória ou eliminação.</p>
+              <p>Essa versão oferece uma interface colorida, responsiva, com animações visuais, mensagens de erro e sucesso, e interação dinâmica sem necessidade de recarregar a página.</p>
+
+              <p><strong>Versão Console (C#)</strong></p>
+              <p>No terminal, os jogadores informam seus dados (nome, idade, sexo, número de cartelas), e o sistema simula todo o sorteio. A verificação de bingo é feita via digitação manual e, se incorreta, a cartela é anulada. Cada jogada, acerto, erro ou eliminação é registrada no arquivo <code>bingo.txt</code>.</p>
+              <p>O código C# está dividido em classes organizadas: <code>Cartela</code>, <code>Jogador</code> e <code>JogoBingo</code>. Isso torna o jogo modular, fácil de entender e ideal para estudos de lógica de programação.</p>
+
+              <p><strong>Destaques e Diferenças</strong></p>
+              <p>A versão web é voltada para uma experiência amigável e visual, ideal para todos os públicos. Já a versão C# é voltada para desenvolvedores ou interessados em entender a lógica interna do jogo, com controle completo por texto e persistência dos dados. Ambas seguem a mesma lógica de regras, mas com interfaces adaptadas aos seus contextos.</p>
+
+              <p><strong>Conclusão</strong></p>
+              <p>O jogo de Bingo em suas duas versões demonstra o domínio do programador em múltiplas linguagens e abordagens de desenvolvimento. A fidelidade às regras do Bingo, o cuidado com a jogabilidade e a organização do código refletem um trabalho completo, que alia técnica, criatividade e usabilidade em um mesmo projeto.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card improved" id="batalha-naval">
+          <img src="imagens/imagem-site-batalhanaval.png" alt="Projeto Batalha Naval" class="project-image">
+          <div class="project-content">
+            <h3 class="project-title">Batalha Naval – Versões Web e Console</h3>
+            <p class="project-summary">
+              Uma adaptação moderna do clássico jogo Batalha Naval, desenvolvida tanto para navegador quanto para execução em console.
+            </p>
+            <ul class="project-details">
+              <li><strong>Versão web:</strong> <a href="https://batalha-naval-alpha.vercel.app/" target="_blank">batalha-naval-alpha.vercel.app</a></li>
+              <li><strong>GitHub (HTML):</strong> <a href="https://github.com/joaopfigo/Batalha_Naval_HTML" target="_blank">Batalha_Naval_HTML</a></li>
+              <li><strong>GitHub (C#):</strong> <a href="https://github.com/joaopfigo/Batalha_Naval_Csharp" target="_blank">Batalha_Naval_Csharp</a></li>
+              <li><strong>Download (EXE):</strong> <a href="arquivos/Jogo Batalha Naval.exe" download>Jogo Batalha Naval.exe</a></li>
+            </ul>
+            <div class="project-tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">C#</span>
+              <span class="tag">Console App</span>
+            </div>
+            <button onclick="toggleDetailsNaval()" class="btn-expand">🔍 Ver detalhes completos</button>
+            <div id="navalDetails" class="details-hidden">
+              <p><strong>Introdução</strong></p>
+              <p>O projeto Batalha Naval foi desenvolvido em duas versões distintas: uma versão visual e jogável diretamente no navegador, feita com HTML, CSS e JavaScript, e uma versão em C# para execução em terminal, utilizando programação orientada a objetos e lógica estruturada. Ambas simulam o tradicional jogo de guerra naval, no qual dois jogadores posicionam embarcações e tentam afundar os navios adversários em um tabuleiro 10x10.</p>
+
+              <p><strong>Versão Web (HTML, CSS, JS)</strong></p>
+              <p>Na versão online, o jogador posiciona suas embarcações manualmente através de cliques em um tabuleiro visual. Os navios variam em tipo e tamanho: submarino (1), hidroavião (2), cruzador (3), encouraçado (4) e porta-avião (5), totalizando 22 pontos. O computador posiciona seus navios automaticamente.</p>
+              <p>Após o posicionamento, inicia-se a fase de ataque. O jogador ataca clicando em células do tabuleiro do computador. O sistema fornece feedback visual em tempo real: tiros na água (X), acertos em navios (T) e mensagens animadas de acerto ou erro. O jogador continua jogando enquanto acertar, caso contrário, o computador ataca.</p>
+              <p>O computador seleciona alvos aleatórios e continua atacando até errar. O jogo termina quando um dos lados atinge 22 pontos (todos os navios afundados). O sistema então exibe um modal com mensagem de vitória ou derrota, animações e botão para reiniciar.</p>
+
+              <p><strong>Versão Console (C#)</strong></p>
+              <p>A versão de terminal foi escrita em C# e utiliza classes como <code>JogadorHumano</code>, <code>JogadorComputador</code>, <code>Embarcacao</code>, <code>Posicao</code> e <code>BatalhaNaval</code>. Nessa versão, o jogador digita seu nome e posiciona manualmente suas embarcações por coordenadas numéricas. O computador posiciona os seus navios automaticamente.</p>
+              <p>Durante o jogo, o jogador visualiza seus próprios tabuleiros e o tabuleiro adversário (com embarcações ocultas). Ele digita as coordenadas do ataque. Ao acertar, ganha um turno extra; ao errar, o computador ataca. A IA do computador também verifica ataques repetidos para evitar duplicatas.</p>
+              <p>Todo o controle é textual, e os dados não são persistidos, mas a estrutura do código permite fácil expansão. O jogo termina assim que um dos jogadores atinge 22 pontos.</p>
+
+              <p><strong>Diferenças entre as versões</strong></p>
+              <ul>
+                <li><strong>Interface:</strong> A versão web é interativa, colorida, animada e responsiva. A versão C# é baseada em texto, voltada para lógica de programação.</li>
+                <li><strong>Controle de jogo:</strong> No navegador, as ações são com cliques e há feedback visual imediato. No console, as ações dependem de digitação, com mensagens em texto simples.</li>
+                <li><strong>IA:</strong> Ambas têm o computador como oponente com estratégia simples, mas funcional. No C#, os ataques do computador são aleatórios com verificação.</li>
+                <li><strong>Reusabilidade e modularidade:</strong> O código C# é dividido em classes bem organizadas, favorecendo testes, alterações e evolução futura.</li>
+              </ul>
+
+              <p><strong>Conclusão</strong></p>
+              <p>Ambas as versões do jogo Batalha Naval mostram a versatilidade e o domínio do desenvolvedor em desenvolver aplicações tanto para web quanto para console. A fidelidade às regras do jogo, as camadas de interatividade e a arquitetura modular tornam esse projeto um exemplo completo de aplicação técnica, didática e divertida — capaz de entreter e ensinar ao mesmo tempo.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card improved"  id="portfolio">
+          <img src="imagens/imagem-site-portifolio.png" alt="Projeto Portfólio Pessoal" class="project-image">
+          <div class="project-content">
+            <h3 class="project-title">Portfólio Pessoal – João Pedro Figueiredo</h3>
+            <p class="project-summary">
+              Um site profissional para apresentar projetos, habilidades e experiências, desenvolvido com foco em clareza, responsividade e identidade visual.
+            </p>
+            <ul class="project-details">
+              <li><strong>GitHub:</strong> <a href="https://github.com/joaopfigo/MeuPortifolio" target="_blank">MeuPortifolio</a></li>
+            </ul>
+            <div class="project-tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Design Responsivo</span>
+            </div>
+            <button onclick="toggleDetailsPortfolio()" class="btn-expand">🔍 Ver detalhes completos</button>
+            <div id="portfolioDetails" class="details-hidden">
+              <p><strong>Introdução</strong></p>
+              <p>Este portfólio foi desenvolvido por João Pedro Figueiredo com o objetivo de reunir seus principais projetos, competências técnicas, e experiências em um ambiente visualmente agradável, responsivo e de fácil navegação. A proposta é fornecer uma apresentação clara das habilidades e soluções criadas em projetos anteriores, permitindo que visitantes e recrutadores explorem cada trabalho com profundidade.</p>
+
+              <p><strong>Estrutura</strong></p>
+              <p>O site é dividido em seções bem definidas: página inicial com introdução, seção de serviços oferecidos, apresentação de soft skills, uma página sobre o autor, e uma seção de projetos detalhada — onde cada aplicação é exibida com imagem, descrição, tecnologias e links relevantes. O destaque vai para o uso de componentes reutilizáveis em HTML e uma estilização consistente em CSS.</p>
+
+              <p><strong>Design Responsivo</strong></p>
+              <p>Toda a interface foi pensada para funcionar bem em computadores, tablets e smartphones. Utiliza-se `flexbox` e `media queries` para garantir que o conteúdo se reorganize conforme o tamanho da tela, mantendo legibilidade e usabilidade.</p>
+
+              <p><strong>Tecnologias utilizadas</strong></p>
+              <p>HTML semântico, CSS modular e JavaScript para interações simples como o botão de "Ler mais". Ícones são integrados via Font Awesome e todo o código é organizado de forma clara em arquivos separados por função.</p>
+
+              <p><strong>Conclusão</strong></p>
+              <p>Este portfólio é um reflexo direto da atenção aos detalhes e da capacidade de João Pedro de entregar uma solução limpa, funcional e comunicativa. Ele continua evoluindo conforme novos projetos são adicionados, servindo como uma vitrine dinâmica de seu crescimento como desenvolvedor.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2023 João Pedro Figueiredo</p>
+  </footer>
+  <script src="app.js"></script>
+  <script>
+    function toggleDetails() {
+      const details = document.getElementById("journeyDetails");
+      const btn = event.target;
+      const isHidden = details.style.display === "none" || details.style.display === "";
+
+      details.style.display = isHidden ? "block" : "none";
+      btn.textContent = isHidden ? "🔽 Mostrar menos" : "🔍 Ver detalhes completos";
+    }
+    function toggleDetailsBingo() {
+      const details = document.getElementById("bingoDetails");
+      const btn = event.target;
+      const isHidden = details.style.display === "none" || details.style.display === "";
+      details.style.display = isHidden ? "block" : "none";
+      btn.textContent = isHidden ? "🔽 Mostrar menos" : "🔍 Ver detalhes completos";
+    }
+    function toggleDetailsNaval() {
+      const details = document.getElementById("navalDetails");
+      const btn = event.target;
+      const isHidden = details.style.display === "none" || details.style.display === "";
+      details.style.display = isHidden ? "block" : "none";
+      btn.textContent = isHidden ? "🔽 Mostrar menos" : "🔍 Ver detalhes completos";
+    }
+    function toggleDetailsPortfolio() {
+      const details = document.getElementById("portfolioDetails");
+      const btn = event.target;
+      const isHidden = details.style.display === "none" || details.style.display === "";
+      details.style.display = isHidden ? "block" : "none";
+      btn.textContent = isHidden ? "🔽 Mostrar menos" : "🔍 Ver detalhes completos";
+    }
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.location.hash === "#bingo") {
+        const details = document.getElementById("bingoDetails");
+        const card = document.querySelector('#bingo');
+        const btn = card.querySelector('.btn-expand');
+        if (details && btn) {
+          details.style.display = "block";
+          btn.textContent = "🔽 Mostrar menos";
+        }
+        card.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+</script>
+
+</body>
+</html>
