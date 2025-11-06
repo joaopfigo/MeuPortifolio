@@ -108,7 +108,9 @@
       <h1>Meus Projetos</h1>
       <div class="project-cards">
         <div class="project-card improved" id="journey">
-          <img src="imagens/imagem-menu-journey.png" alt="Projeto Journey" class="project-image">
+          <button type="button" class="project-image-trigger" data-image="imagens/imagem-menu-journey.png" data-alt="Projeto Journey">
+            <img src="imagens/imagem-menu-journey.png" alt="Projeto Journey" class="project-image">
+          </button>
           <div class="project-content">
             <h3 class="project-title">Journey – Organização de Viagens em Grupo</h3>
             <p class="project-summary">
@@ -162,7 +164,9 @@
         </div>
 
         <div class="project-card improved" id="bingo">
-          <img src="imagens/imagem-site-bingo.png" alt="Projeto Jogo de Bingo" class="project-image">
+          <button type="button" class="project-image-trigger" data-image="imagens/imagem-site-bingo.png" data-alt="Projeto Jogo de Bingo">
+            <img src="imagens/imagem-site-bingo.png" alt="Projeto Jogo de Bingo" class="project-image">
+          </button>
           <div class="project-content">
             <h3 class="project-title">Jogo de Bingo – Versões Web e Console</h3>
             <p class="project-summary">
@@ -205,7 +209,9 @@
         </div>
 
         <div class="project-card improved" id="batalha-naval">
-          <img src="imagens/imagem-site-batalhanaval.png" alt="Projeto Batalha Naval" class="project-image">
+          <button type="button" class="project-image-trigger" data-image="imagens/imagem-site-batalhanaval.png" data-alt="Projeto Batalha Naval">
+            <img src="imagens/imagem-site-batalhanaval.png" alt="Projeto Batalha Naval" class="project-image">
+          </button>
           <div class="project-content">
             <h3 class="project-title">Batalha Naval – Versões Web e Console</h3>
             <p class="project-summary">
@@ -254,7 +260,9 @@
         </div>
 
         <div class="project-card improved"  id="portfolio">
-          <img src="imagens/imagem-site-portifolio.png" alt="Projeto Portfólio Pessoal" class="project-image">
+          <button type="button" class="project-image-trigger" data-image="imagens/imagem-site-portifolio.png" data-alt="Projeto Portfólio Pessoal">
+            <img src="imagens/imagem-site-portifolio.png" alt="Projeto Portfólio Pessoal" class="project-image">
+          </button>
           <div class="project-content">
             <h3 class="project-title">Portfólio Pessoal – João Pedro Figueiredo</h3>
             <p class="project-summary">
@@ -295,6 +303,13 @@
   <footer>
     <p>&copy; 2023 João Pedro Figueiredo</p>
   </footer>
+  <div class="image-modal" id="imageModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="image-modal__overlay" data-modal-overlay></div>
+    <div class="image-modal__content">
+      <button type="button" class="image-modal__close" aria-label="Fechar imagem" data-modal-close>&times;</button>
+      <img src="" alt="" class="image-modal__img">
+    </div>
+  </div>
   <script src="app.js"></script>
   <script>
     function toggleDetails() {

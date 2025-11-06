@@ -201,6 +201,33 @@ h2 {
   background: radial-gradient(circle at top, rgba(42, 182, 255, 0.15), transparent 55%), var(--gradient-end);
 }
 
+.project-image-trigger {
+  background: none;
+  border: none;
+  padding: 0;
+  display: block;
+  width: 100%;
+  line-height: 0;
+  border-radius: 1rem;
+  cursor: zoom-in;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-image-trigger:focus-visible {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 4px;
+}
+
+.project-image-trigger:hover .project-image,
+.project-image-trigger:focus-visible .project-image {
+  box-shadow: 0 20px 40px -24px rgba(42, 182, 255, 0.65);
+  transform: translateY(-4px);
+}
+
+.project-image-trigger .project-image {
+  display: block;
+}
+
 .project-card {
   position: relative;
   display: flex;
@@ -944,4 +971,72 @@ footer {
     width: 100%;
     justify-content: center;
   }
+}
+
+.image-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.image-modal.is-visible {
+  display: flex;
+}
+
+.image-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 11, 26, 0.75);
+  backdrop-filter: blur(4px);
+}
+
+.image-modal__content {
+  position: relative;
+  z-index: 1;
+  max-width: min(90%, 960px);
+  max-height: 90vh;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-strong);
+  background: linear-gradient(145deg, rgba(24, 33, 57, 0.95), rgba(17, 24, 39, 0.9));
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-modal__img {
+  max-width: 100%;
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+  border-radius: 0.75rem;
+  box-shadow: 0 18px 50px -20px rgba(0, 0, 0, 0.8);
+}
+
+.image-modal__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--highlight-color);
+  color: #050b1a;
+  border: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 999px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.image-modal__close:hover,
+.image-modal__close:focus-visible {
+  transform: scale(1.05);
+  box-shadow: 0 16px 30px -18px rgba(255, 215, 0, 0.65);
 }
