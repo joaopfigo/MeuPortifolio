@@ -1,9 +1,12 @@
 :root {
   /* Color variables - easily modify these values to change the color scheme */
   --background-color: #111111;
+  --background-alt: #050b1a;
   --gradient-end: #1f1f1f;
   --text-color: #e0e0e0;
+  --text-muted: #94a3b8;
   --active-color: #2ab6ff;
+  --accent-color: #38bdf8;
   --dark-gray: #1c1c1c;
   --highlight-color: #ffd700;
   --button-bg: #1a1a1a;
@@ -12,6 +15,10 @@
   --card-gradient-start: rgba(42, 182, 255, 0.25);
   --card-gradient-end: rgba(255, 215, 0, 0.15);
   --card-border: rgba(42, 182, 255, 0.3);
+  --shadow-soft: 0 15px 35px -20px rgba(15, 23, 42, 0.7);
+  --shadow-strong: 0 25px 50px -20px rgba(15, 23, 42, 0.85);
+  --surface-highlight: rgba(24, 33, 57, 0.85);
+  --surface-color: rgba(11, 17, 32, 0.85);
   --cta-primary: linear-gradient(135deg, #ffd700, #2ab6ff);
   --cta-primary-hover: linear-gradient(135deg, #ffe066, #5cd3ff);
 }
