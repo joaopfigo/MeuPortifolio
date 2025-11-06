@@ -28,48 +28,93 @@
     <section class="section">
       <h1>Serviços Contratáveis</h1>
       <div class="services-grid">
-        
+
         <div class="service-card">
           <h2>Criação de Sites Personalizados</h2>
           <p class="service-description">
-            Desenvolvimento de sites institucionais, lojas virtuais e páginas para negócios...
-            <span class="full-description">
-              Desenvolvimento de sites modernos, únicos e responsivos, totalmente alinhados às necessidades do cliente. Realizo páginas institucionais, sites para apresentação de negócios e lojas virtuais (e-commerce) para venda de produtos ou serviços, sempre focando em visual agradável, facilidade de uso e informações claras. Utilizo HTML, CSS e JavaScript para criar soluções intuitivas, funcionais e de fácil manutenção.
-            </span>
+            Desenvolvimento de sites institucionais, lojas virtuais e páginas para negócios com foco em desempenho e identidade visual.
           </p>
+          <button type="button" class="service-more" data-service-modal-target="service-modal-sites" aria-controls="service-modal-sites">
+            Saiba mais
+          </button>
         </div>
-        
+
         <div class="service-card">
           <h2>Ajustes e Melhorias em Sites Existentes</h2>
           <p class="service-description">
-            Atualização de conteúdo, correção de erros...
-            <span class="full-description">
-              Realizo ajustes, pequenas correções, atualizações de conteúdo e melhorias em sites já existentes. Posso ajudar a tornar seu site mais funcional, corrigir bugs simples, atualizar informações ou personalizar elementos conforme sua necessidade.
-            </span>
+            Atualização de conteúdo, correção de erros e melhorias pontuais para tornar seu site mais funcional e atualizado.
           </p>
+          <button type="button" class="service-more" data-service-modal-target="service-modal-updates" aria-controls="service-modal-updates">
+            Saiba mais
+          </button>
         </div>
-                
+
         <div class="service-card">
           <h2>Desenvolvimento de Sistemas e Programas</h2>
           <p class="service-description">
-            Desenvolvimento de soluções backend, como sistemas...
-            <span class="full-description">
-              Desenvolvimento de soluções backend, como sistemas de gerenciamento, integração de dados, processamento de informações e automação de tarefas, com foco em desempenho e escalabilidade.
-            </span>
+            Criação de soluções backend personalizadas, integrações e automação de processos corporativos ou acadêmicos.
           </p>
+          <button type="button" class="service-more" data-service-modal-target="service-modal-systems" aria-controls="service-modal-systems">
+            Saiba mais
+          </button>
         </div>
-        
-      <div class="service-card">
-        <h2>Desenvolvimento de Lógicas e Bancos de Dados</h2>
-        <p class="service-description">
-          Criação de programas com boa estrutura e uso de banco de dados...
-          <span class="full-description">
-            Elaboração de sistemas, scripts ou programas com foco em lógica bem organizada, utilizando técnicas de orientação a objetos e manipulação de banco de dados. Experiência com C#, Python, SQL e projetos acadêmicos ou soluções personalizadas para pequenas demandas.
-          </span>
-        </p>
-      </div>
+
+        <div class="service-card">
+          <h2>Desenvolvimento de Lógicas e Bancos de Dados</h2>
+          <p class="service-description">
+            Estruturação de programas com lógica organizada, orientação a objetos e manipulação de dados em múltiplas linguagens.
+          </p>
+          <button type="button" class="service-more" data-service-modal-target="service-modal-databases" aria-controls="service-modal-databases">
+            Saiba mais
+          </button>
+        </div>
 
       </div>
+
+      <div class="service-modal" id="service-modal-sites" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="service-modal-sites-title">
+        <div class="service-modal__overlay" data-service-modal-close></div>
+        <div class="service-modal__content" role="document">
+          <button type="button" class="service-modal__close" aria-label="Fechar descrição completa" data-service-modal-close data-service-modal-initial-focus>&times;</button>
+          <h2 id="service-modal-sites-title">Criação de Sites Personalizados</h2>
+          <p>
+            Desenvolvimento de sites modernos, únicos e responsivos, totalmente alinhados às necessidades do cliente. Realizo páginas institucionais, sites para apresentação de negócios e lojas virtuais (e-commerce) para venda de produtos ou serviços, sempre focando em visual agradável, facilidade de uso e informações claras. Utilizo HTML, CSS e JavaScript para criar soluções intuitivas, funcionais e de fácil manutenção.
+          </p>
+        </div>
+      </div>
+
+      <div class="service-modal" id="service-modal-updates" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="service-modal-updates-title">
+        <div class="service-modal__overlay" data-service-modal-close></div>
+        <div class="service-modal__content" role="document">
+          <button type="button" class="service-modal__close" aria-label="Fechar descrição completa" data-service-modal-close data-service-modal-initial-focus>&times;</button>
+          <h2 id="service-modal-updates-title">Ajustes e Melhorias em Sites Existentes</h2>
+          <p>
+            Realizo ajustes, pequenas correções, atualizações de conteúdo e melhorias em sites já existentes. Posso ajudar a tornar seu site mais funcional, corrigir bugs simples, atualizar informações ou personalizar elementos conforme sua necessidade, mantendo consistência visual e boas práticas de acessibilidade.
+          </p>
+        </div>
+      </div>
+
+      <div class="service-modal" id="service-modal-systems" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="service-modal-systems-title">
+        <div class="service-modal__overlay" data-service-modal-close></div>
+        <div class="service-modal__content" role="document">
+          <button type="button" class="service-modal__close" aria-label="Fechar descrição completa" data-service-modal-close data-service-modal-initial-focus>&times;</button>
+          <h2 id="service-modal-systems-title">Desenvolvimento de Sistemas e Programas</h2>
+          <p>
+            Desenvolvimento de soluções backend, como sistemas de gerenciamento, integração de dados, processamento de informações e automação de tarefas, com foco em desempenho e escalabilidade. Entrego APIs estruturadas, processos automatizados e documentação para que a manutenção seja simples e segura.
+          </p>
+        </div>
+      </div>
+
+      <div class="service-modal" id="service-modal-databases" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="service-modal-databases-title">
+        <div class="service-modal__overlay" data-service-modal-close></div>
+        <div class="service-modal__content" role="document">
+          <button type="button" class="service-modal__close" aria-label="Fechar descrição completa" data-service-modal-close data-service-modal-initial-focus>&times;</button>
+          <h2 id="service-modal-databases-title">Desenvolvimento de Lógicas e Bancos de Dados</h2>
+          <p>
+            Elaboração de sistemas, scripts ou programas com foco em lógica bem organizada, utilizando técnicas de orientação a objetos e manipulação de banco de dados. Experiência com C#, Python, SQL e projetos acadêmicos ou soluções personalizadas para pequenas demandas, incluindo modelagem de dados e relatórios.
+          </p>
+        </div>
+      </div>
+
     </section>
   </main>
   <footer>

@@ -565,7 +565,6 @@ h2 {
   padding: 2.75rem;
   border-radius: 1rem;
   transition: transform 0.35s ease, box-shadow 0.35s ease;
-  cursor: pointer;
   overflow: hidden;
   position: relative;
   min-height: 250px;
@@ -606,28 +605,160 @@ h2 {
   transform: translateY(-4px);
 }
 
-.service-card .full-description {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: var(--surface-highlight);
-  padding: 2.75rem;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+.service-more {
+  margin-top: 2rem;
+  padding: 0.85rem 1.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(255, 215, 0, 0.25));
   color: var(--text-color);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.service-card:hover .full-description {
-  display: block;
-  opacity: 1;
-  font-size: 1.2rem;
+.service-more::after {
+  content: '→';
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.service-more:hover,
+.service-more:focus-visible {
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.35), rgba(255, 215, 0, 0.45));
+  transform: translateY(-3px);
+  box-shadow: 0 18px 36px -20px rgba(56, 189, 248, 0.65);
+  outline: none;
+}
+
+.service-more:hover::after,
+.service-more:focus-visible::after {
+  transform: translateX(4px);
+}
+
+.service-more:focus-visible {
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.5);
+}
+
+.service-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2100;
+}
+
+.service-modal.is-visible {
+  display: flex;
+}
+
+.service-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 11, 26, 0.8);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  animation: modalOverlayFade 0.35s forwards;
+}
+
+.service-modal__content {
+  position: relative;
+  z-index: 1;
+  width: min(600px, 90%);
+  max-height: min(80vh, 720px);
+  overflow-y: auto;
+  padding: clamp(2rem, 4vw, 2.75rem);
+  border-radius: 1.25rem;
+  background: linear-gradient(140deg, rgba(24, 33, 57, 0.97), rgba(11, 17, 32, 0.92));
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  box-shadow: 0 28px 70px -30px rgba(15, 23, 42, 0.85);
+  color: var(--text-color);
+  transform: translateY(20px);
+  opacity: 0;
+  animation: modalContentSlide 0.4s forwards;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.service-modal__content h2 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  color: var(--highlight-color);
+  margin: 0;
+}
+
+.service-modal__content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+}
+
+.service-modal__close {
+  position: sticky;
+  top: 0;
+  align-self: flex-end;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 999px;
+  border: none;
+  background: var(--highlight-color);
+  color: #050b1a;
+  font-size: 1.6rem;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: 0 12px 28px -18px rgba(255, 215, 0, 0.55);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.service-modal__close:hover,
+.service-modal__close:focus-visible {
+  transform: scale(1.05);
+  box-shadow: 0 18px 36px -18px rgba(255, 215, 0, 0.7);
+  outline: none;
+}
+
+@keyframes modalOverlayFade {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalContentSlide {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-modal__content {
+    width: 92%;
+    max-height: 85vh;
+    padding: 2rem 1.5rem;
+  }
+
+  .service-modal__content p {
+    font-size: 1rem;
+  }
+
+  .service-modal__close {
+    position: sticky;
+    top: 0.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .service-modal__content {
+    width: min(680px, 70%);
+  }
 }
 
 footer {
