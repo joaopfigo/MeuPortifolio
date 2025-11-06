@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalClose = modal ? modal.querySelector('[data-modal-close]') : null;
   const modalOverlay = modal ? modal.querySelector('[data-modal-overlay]') : null;
   const triggers = document.querySelectorAll('.project-image-trigger');
+  const carousels = document.querySelectorAll('[data-carousel]');
 
   const openModal = (src, alt) => {
     if (!modal || !modalImage) return;
@@ -56,6 +57,43 @@ document.addEventListener('DOMContentLoaded', () => {
         openModal(imageSrc, imageAlt);
       }
     });
+  });
+
+  carousels.forEach(carousel => {
+    const track = carousel.querySelector('[data-carousel-track]');
+    const prevButton = carousel.querySelector('[data-carousel-prev]');
+    const nextButton = carousel.querySelector('[data-carousel-next]');
+
+    if (!track) {
+      return;
+    }
+
+    const scrollByAmount = direction => {
+      const amount = track.clientWidth * 0.9;
+      track.scrollBy({ left: amount * direction, behavior: 'smooth' });
+    };
+
+    const updateControls = () => {
+      const maxScroll = track.scrollWidth - track.clientWidth;
+      if (prevButton) {
+        prevButton.disabled = track.scrollLeft <= 1;
+      }
+      if (nextButton) {
+        nextButton.disabled = track.scrollLeft >= maxScroll - 1;
+      }
+    };
+
+    prevButton?.addEventListener('click', () => {
+      scrollByAmount(-1);
+    });
+
+    nextButton?.addEventListener('click', () => {
+      scrollByAmount(1);
+    });
+
+    track.addEventListener('scroll', updateControls, { passive: true });
+    window.addEventListener('resize', updateControls);
+    updateControls();
   });
 
   modalClose?.addEventListener('click', closeModal);
