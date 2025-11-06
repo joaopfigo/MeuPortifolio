@@ -193,9 +193,11 @@ h2 {
 
 .project-cards {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: 2.5rem;
   padding: 2.5rem 5%;
+  max-width: 900px;
+  margin: 0 auto;
   background: radial-gradient(circle at top, rgba(42, 182, 255, 0.15), transparent 55%), var(--gradient-end);
 }
 
